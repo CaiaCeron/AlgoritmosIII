@@ -10,7 +10,7 @@ E-mail: laudrin_92@hotmail.com
 O projeto inicial que será desenvolvido ao longo do semestre na disciplina de algoritmos e programação III.
 * **Objetivo**
 
-O objetivo do sistema é gerenciar todas as áreas de uma determinada loja (vendas, aquisição de produtos e estoque), ele terá a função de organizar e registrar todo tipo de movimentação realizada neste local. Este sistema terá alguns requisitos funcionais tais como:
+O objetivo do sistema é gerenciar todas as áreas de uma determinada loja (vendas, aquisição de mercadorias e estoque), ele terá a função de organizar e registrar todo tipo de movimentação realizada neste local. Este sistema terá alguns requisitos funcionais tais como:
 * **Requisitos Funcionais**
 1. Cadastrar informações de fornecedores
 2. Alterar ou excluir informações de fornecedores
@@ -18,7 +18,7 @@ O objetivo do sistema é gerenciar todas as áreas de uma determinada loja (vend
 4. Alterar ou remover mercadorias
 5. Cadastrar informações dos funcionários
 6. Alterar ou remover funcionários
-7. Emitir relatorios financeiros
+7. Emitir relatórios financeiros
 8. Pesquisar conteúdo do estoque
 9. Emitir nota fiscal com informações da venda
 10. Validação de usuário
