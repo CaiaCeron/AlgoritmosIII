@@ -1,11 +1,14 @@
 ![logo](http://sisdia.abmes.org.br/images/logo/5000_Logo.jpg)
 # Projeto Algoritmos e Programação III
-Aluno: Alexandre Schmidt  
-Aluno: Caiã Ceron  
-Aluno: Láudrin Rei Garralaga  
-E-mail: alexandrep.schmidt@gmail.com  
-E-mail: caiaceron@gmail.com  
-E-mail: laudrin_92@hotmail.com    
+Integrantes do projeto: 
+* Alexandre Schmidt  
+* Caiã Ceron  
+* Láudrin Rei Garralaga  
+
+E-mail para contato:
+* alexandrep.schmidt@gmail.com  
+* caiaceron@gmail.com  
+* laudrin_92@hotmail.com    
 
 Projeto inicial que será desenvolvido ao longo do semestre na disciplina de algoritmos e programação III.
 * **Objetivo**
