@@ -1,14 +1,21 @@
 ![logo](http://sisdia.abmes.org.br/images/logo/5000_Logo.jpg)
 # Projeto Algoritmos e Programação III
+Aluno: Alexandre Schmidt  
+Aluno: Caiã Ceron  
+Aluno: Láudrin Rei Garralaga  
+E-mail: alexandrep.schmidt@gmail.com  
+E-mail: caiaceron@gmail.com  
+E-mail: laudrin_92@hotmail.com    
+
 O projeto inicial que será desenvolvido ao longo do semestre na disciplina de algoritmos e programação III.
-* **Objetivos**
+* **Objetivo**
 
 O objetivo do sistema é gerenciar todas as áreas de uma determinada loja (vendas, aquisição de produtos e estoque), ele terá a função de organizar e registrar todo tipo de movimentação realizada neste local. Este sistema terá alguns requisitos funcionais tais como:
 * **Requisitos Funcionais**
 1. Cadastrar informações de fornecedores
 2. Alterar ou excluir informações de fornecedores
-3. Cadastrar produtos
-4. Alterar ou remover produtos
+3. Cadastrar mercadorias
+4. Alterar ou remover mercadorias
 5. Cadastrar informações dos funcionários
 6. Alterar ou remover funcionários
 7. Emitir relatorios financeiros
