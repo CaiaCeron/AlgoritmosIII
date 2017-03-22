@@ -7,7 +7,7 @@ E-mail: alexandrep.schmidt@gmail.com
 E-mail: caiaceron@gmail.com  
 E-mail: laudrin_92@hotmail.com    
 
-O projeto inicial que será desenvolvido ao longo do semestre na disciplina de algoritmos e programação III.
+Projeto inicial que será desenvolvido ao longo do semestre na disciplina de algoritmos e programação III.
 * **Objetivo**
 
 O objetivo do sistema é gerenciar todas as áreas de uma determinada loja (vendas, aquisição de mercadorias e estoque), ele terá a função de organizar e registrar todo tipo de movimentação realizada neste local. Este sistema terá alguns requisitos funcionais tais como:
