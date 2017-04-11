@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EndereçoCreateDlg" widgetVar="EndereçoCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateEndereçoTitle}">
+            <h:form id="EndereçoCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{endereçoController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateEndereçoLabel_cep}" for="cep" />
+                        <p:inputText id="cep" value="#{endereçoController.selected.cep}" title="#{bundle.CreateEndereçoTitle_cep}" required="true" requiredMessage="#{bundle.CreateEndereçoRequiredMessage_cep}"/>
+                        <p:outputLabel value="#{bundle.CreateEndereçoLabel_rua}" for="rua" />
+                        <p:inputText id="rua" value="#{endereçoController.selected.rua}" title="#{bundle.CreateEndereçoTitle_rua}" required="true" requiredMessage="#{bundle.CreateEndereçoRequiredMessage_rua}"/>
+                        <p:outputLabel value="#{bundle.CreateEndereçoLabel_logradouro}" for="logradouro" />
+                        <p:inputText id="logradouro" value="#{endereçoController.selected.logradouro}" title="#{bundle.CreateEndereçoTitle_logradouro}" required="true" requiredMessage="#{bundle.CreateEndereçoRequiredMessage_logradouro}"/>
+                        <p:outputLabel value="#{bundle.CreateEndereçoLabel_numero}" for="numero" />
+                        <p:inputText id="numero" value="#{endereçoController.selected.numero}" title="#{bundle.CreateEndereçoTitle_numero}" required="true" requiredMessage="#{bundle.CreateEndereçoRequiredMessage_numero}"/>
+                        <p:outputLabel value="#{bundle.CreateEndereçoLabel_complemento}" for="complemento" />
+                        <p:inputText id="complemento" value="#{endereçoController.selected.complemento}" title="#{bundle.CreateEndereçoTitle_complemento}" />
+                        <p:outputLabel value="#{bundle.CreateEndereçoLabel_nomeCidade}" for="nomeCidade" />
+                        <p:inputText id="nomeCidade" value="#{endereçoController.selected.nomeCidade}" title="#{bundle.CreateEndereçoTitle_nomeCidade}" required="true" requiredMessage="#{bundle.CreateEndereçoRequiredMessage_nomeCidade}"/>
+                        <p:outputLabel value="#{bundle.CreateEndereçoLabel_UFid}" for="UFid" />
+                        <p:selectOneMenu id="UFid" value="#{endereçoController.selected.UFid}" required="true" requiredMessage="#{bundle.EditEndereçoRequiredMessage_UFid}">
+                            <f:selectItems value="#{ufController.itemsAvailableSelectOne}"
+                                           var="UFidItem"
+                                           itemValue="#{UFidItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{endereçoController.create}" value="#{bundle.Save}" update="display,:EndereçoListForm:datalist,:growl" oncomplete="handleSubmit(args,'EndereçoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EndereçoCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

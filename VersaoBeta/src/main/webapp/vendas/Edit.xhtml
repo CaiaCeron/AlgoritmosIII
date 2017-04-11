@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="VendasEditDlg" widgetVar="VendasEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditVendasTitle}">
+            <h:form id="VendasEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{vendasController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditVendasLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{vendasController.selected.id}" title="#{bundle.EditVendasTitle_id}" required="true" requiredMessage="#{bundle.EditVendasRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditVendasLabel_quantProdutos}" for="quantProdutos" />
+                        <p:inputText id="quantProdutos" value="#{vendasController.selected.quantProdutos}" title="#{bundle.EditVendasTitle_quantProdutos}" required="true" requiredMessage="#{bundle.EditVendasRequiredMessage_quantProdutos}"/>
+                        <p:outputLabel value="#{bundle.EditVendasLabel_valorTotal}" for="valorTotal" />
+                        <p:inputText id="valorTotal" value="#{vendasController.selected.valorTotal}" title="#{bundle.EditVendasTitle_valorTotal}" required="true" requiredMessage="#{bundle.EditVendasRequiredMessage_valorTotal}"/>
+                        <p:outputLabel value="#{bundle.EditVendasLabel_formaPagamento}" for="formaPagamento" />
+                        <p:inputText id="formaPagamento" value="#{vendasController.selected.formaPagamento}" title="#{bundle.EditVendasTitle_formaPagamento}" required="true" requiredMessage="#{bundle.EditVendasRequiredMessage_formaPagamento}"/>
+                        <p:outputLabel value="#{bundle.EditVendasLabel_funcionarioscpf}" for="funcionarioscpf" />
+                        <p:selectOneMenu id="funcionarioscpf" value="#{vendasController.selected.funcionarioscpf}" required="true" requiredMessage="#{bundle.EditVendasRequiredMessage_funcionarioscpf}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{funcionariosController.itemsAvailableSelectOne}"
+                                           var="funcionarioscpfItem"
+                                           itemValue="#{funcionarioscpfItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{vendasController.update}" value="#{bundle.Save}" update="display,:VendasListForm:datalist,:growl" oncomplete="handleSubmit(args, 'VendasEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="VendasEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FuncionariosViewDlg" widgetVar="FuncionariosViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewFuncionariosTitle}">
+            <h:form id="FuncionariosViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{funcionariosController.selected != null}">
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_cpf}"/>
+                        <h:outputText value="#{funcionariosController.selected.cpf}" title="#{bundle.ViewFuncionariosTitle_cpf}"/>
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_nome}"/>
+                        <h:outputText value="#{funcionariosController.selected.nome}" title="#{bundle.ViewFuncionariosTitle_nome}"/>
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_dataNascimento}"/>
+                        <h:outputText value="#{funcionariosController.selected.dataNascimento}" title="#{bundle.ViewFuncionariosTitle_dataNascimento}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_rg}"/>
+                        <h:outputText value="#{funcionariosController.selected.rg}" title="#{bundle.ViewFuncionariosTitle_rg}"/>
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_fone}"/>
+                        <h:outputText value="#{funcionariosController.selected.fone}" title="#{bundle.ViewFuncionariosTitle_fone}"/>
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_EMail}"/>
+                        <h:outputText value="#{funcionariosController.selected.EMail}" title="#{bundle.ViewFuncionariosTitle_EMail}"/>
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_sexo}"/>
+                        <h:outputText value="#{funcionariosController.selected.sexo}" title="#{bundle.ViewFuncionariosTitle_sexo}"/>
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_cargo}"/>
+                        <h:outputText value="#{funcionariosController.selected.cargo}" title="#{bundle.ViewFuncionariosTitle_cargo}"/>
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_login}"/>
+                        <h:outputText value="#{funcionariosController.selected.login}" title="#{bundle.ViewFuncionariosTitle_login}"/>
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_senha}"/>
+                        <h:outputText value="#{funcionariosController.selected.senha}" title="#{bundle.ViewFuncionariosTitle_senha}"/>
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_salario}"/>
+                        <h:outputText value="#{funcionariosController.selected.salario}" title="#{bundle.ViewFuncionariosTitle_salario}"/>
+                        <h:outputText value="#{bundle.ViewFuncionariosLabel_endereçoCEP}"/>
+                        <h:outputText value="#{funcionariosController.selected.endereçoCEP}" title="#{bundle.ViewFuncionariosTitle_endereçoCEP}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="FuncionariosViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

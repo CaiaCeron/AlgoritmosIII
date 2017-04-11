@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FornecedoresCreateDlg" widgetVar="FornecedoresCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateFornecedoresTitle}">
+            <h:form id="FornecedoresCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{fornecedoresController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateFornecedoresLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{fornecedoresController.selected.id}" title="#{bundle.CreateFornecedoresTitle_id}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateFornecedoresLabel_cnpj}" for="cnpj" />
+                        <p:inputText id="cnpj" value="#{fornecedoresController.selected.cnpj}" title="#{bundle.CreateFornecedoresTitle_cnpj}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_cnpj}"/>
+                        <p:outputLabel value="#{bundle.CreateFornecedoresLabel_nome}" for="nome" />
+                        <p:inputText id="nome" value="#{fornecedoresController.selected.nome}" title="#{bundle.CreateFornecedoresTitle_nome}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_nome}"/>
+                        <p:outputLabel value="#{bundle.CreateFornecedoresLabel_EMail}" for="EMail" />
+                        <p:inputText id="EMail" value="#{fornecedoresController.selected.EMail}" title="#{bundle.CreateFornecedoresTitle_EMail}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_EMail}"/>
+                        <p:outputLabel value="#{bundle.CreateFornecedoresLabel_telefone}" for="telefone" />
+                        <p:inputText id="telefone" value="#{fornecedoresController.selected.telefone}" title="#{bundle.CreateFornecedoresTitle_telefone}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_telefone}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{fornecedoresController.create}" value="#{bundle.Save}" update="display,:FornecedoresListForm:datalist,:growl" oncomplete="handleSubmit(args,'FornecedoresCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="FornecedoresCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

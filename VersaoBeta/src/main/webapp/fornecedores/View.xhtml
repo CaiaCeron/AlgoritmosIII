@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FornecedoresViewDlg" widgetVar="FornecedoresViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewFornecedoresTitle}">
+            <h:form id="FornecedoresViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{fornecedoresController.selected != null}">
+                        <h:outputText value="#{bundle.ViewFornecedoresLabel_id}"/>
+                        <h:outputText value="#{fornecedoresController.selected.id}" title="#{bundle.ViewFornecedoresTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewFornecedoresLabel_cnpj}"/>
+                        <h:outputText value="#{fornecedoresController.selected.cnpj}" title="#{bundle.ViewFornecedoresTitle_cnpj}"/>
+                        <h:outputText value="#{bundle.ViewFornecedoresLabel_nome}"/>
+                        <h:outputText value="#{fornecedoresController.selected.nome}" title="#{bundle.ViewFornecedoresTitle_nome}"/>
+                        <h:outputText value="#{bundle.ViewFornecedoresLabel_EMail}"/>
+                        <h:outputText value="#{fornecedoresController.selected.EMail}" title="#{bundle.ViewFornecedoresTitle_EMail}"/>
+                        <h:outputText value="#{bundle.ViewFornecedoresLabel_telefone}"/>
+                        <h:outputText value="#{fornecedoresController.selected.telefone}" title="#{bundle.ViewFornecedoresTitle_telefone}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="FornecedoresViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

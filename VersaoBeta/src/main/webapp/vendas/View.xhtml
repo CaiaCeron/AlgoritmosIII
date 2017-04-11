@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="VendasViewDlg" widgetVar="VendasViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewVendasTitle}">
+            <h:form id="VendasViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{vendasController.selected != null}">
+                        <h:outputText value="#{bundle.ViewVendasLabel_id}"/>
+                        <h:outputText value="#{vendasController.selected.id}" title="#{bundle.ViewVendasTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewVendasLabel_quantProdutos}"/>
+                        <h:outputText value="#{vendasController.selected.quantProdutos}" title="#{bundle.ViewVendasTitle_quantProdutos}"/>
+                        <h:outputText value="#{bundle.ViewVendasLabel_valorTotal}"/>
+                        <h:outputText value="#{vendasController.selected.valorTotal}" title="#{bundle.ViewVendasTitle_valorTotal}"/>
+                        <h:outputText value="#{bundle.ViewVendasLabel_formaPagamento}"/>
+                        <h:outputText value="#{vendasController.selected.formaPagamento}" title="#{bundle.ViewVendasTitle_formaPagamento}"/>
+                        <h:outputText value="#{bundle.ViewVendasLabel_funcionarioscpf}"/>
+                        <h:outputText value="#{vendasController.selected.funcionarioscpf}" title="#{bundle.ViewVendasTitle_funcionarioscpf}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="VendasViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FuncionariosCreateDlg" widgetVar="FuncionariosCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateFuncionariosTitle}">
+            <h:form id="FuncionariosCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{funcionariosController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_cpf}" for="cpf" />
+                        <p:inputText id="cpf" value="#{funcionariosController.selected.cpf}" title="#{bundle.CreateFuncionariosTitle_cpf}" required="true" requiredMessage="#{bundle.CreateFuncionariosRequiredMessage_cpf}"/>
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_nome}" for="nome" />
+                        <p:inputText id="nome" value="#{funcionariosController.selected.nome}" title="#{bundle.CreateFuncionariosTitle_nome}" required="true" requiredMessage="#{bundle.CreateFuncionariosRequiredMessage_nome}"/>
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_dataNascimento}" for="dataNascimento" />
+                        <p:calendar id="dataNascimento" pattern="MM/dd/yyyy" value="#{funcionariosController.selected.dataNascimento}" title="#{bundle.EditFuncionariosTitle_dataNascimento}" required="true" requiredMessage="#{bundle.EditFuncionariosRequiredMessage_dataNascimento}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_rg}" for="rg" />
+                        <p:inputText id="rg" value="#{funcionariosController.selected.rg}" title="#{bundle.CreateFuncionariosTitle_rg}" required="true" requiredMessage="#{bundle.CreateFuncionariosRequiredMessage_rg}"/>
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_fone}" for="fone" />
+                        <p:inputText id="fone" value="#{funcionariosController.selected.fone}" title="#{bundle.CreateFuncionariosTitle_fone}" />
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_EMail}" for="EMail" />
+                        <p:inputText id="EMail" value="#{funcionariosController.selected.EMail}" title="#{bundle.CreateFuncionariosTitle_EMail}" />
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_sexo}" for="sexo" />
+                        <p:inputText id="sexo" value="#{funcionariosController.selected.sexo}" title="#{bundle.CreateFuncionariosTitle_sexo}" />
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_cargo}" for="cargo" />
+                        <p:inputText id="cargo" value="#{funcionariosController.selected.cargo}" title="#{bundle.CreateFuncionariosTitle_cargo}" required="true" requiredMessage="#{bundle.CreateFuncionariosRequiredMessage_cargo}"/>
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_login}" for="login" />
+                        <p:inputText id="login" value="#{funcionariosController.selected.login}" title="#{bundle.CreateFuncionariosTitle_login}" />
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_senha}" for="senha" />
+                        <p:inputText id="senha" value="#{funcionariosController.selected.senha}" title="#{bundle.CreateFuncionariosTitle_senha}" />
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_salario}" for="salario" />
+                        <p:inputText id="salario" value="#{funcionariosController.selected.salario}" title="#{bundle.CreateFuncionariosTitle_salario}" required="true" requiredMessage="#{bundle.CreateFuncionariosRequiredMessage_salario}"/>
+                        <p:outputLabel value="#{bundle.CreateFuncionariosLabel_endereçoCEP}" for="endereçoCEP" />
+                        <p:selectOneMenu id="endereçoCEP" value="#{funcionariosController.selected.endereçoCEP}" required="true" requiredMessage="#{bundle.EditFuncionariosRequiredMessage_endereçoCEP}">
+                            <f:selectItems value="#{endereçoController.itemsAvailableSelectOne}"
+                                           var="endereçoCEPItem"
+                                           itemValue="#{endereçoCEPItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{funcionariosController.create}" value="#{bundle.Save}" update="display,:FuncionariosListForm:datalist,:growl" oncomplete="handleSubmit(args,'FuncionariosCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="FuncionariosCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

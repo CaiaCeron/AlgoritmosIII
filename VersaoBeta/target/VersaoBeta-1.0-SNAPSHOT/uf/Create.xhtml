@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UfCreateDlg" widgetVar="UfCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateUfTitle}">
+            <h:form id="UfCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{ufController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateUfLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{ufController.selected.id}" title="#{bundle.CreateUfTitle_id}" required="true" requiredMessage="#{bundle.CreateUfRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateUfLabel_nome}" for="nome" />
+                        <p:inputText id="nome" value="#{ufController.selected.nome}" title="#{bundle.CreateUfTitle_nome}" required="true" requiredMessage="#{bundle.CreateUfRequiredMessage_nome}"/>
+                        <p:outputLabel value="#{bundle.CreateUfLabel_sigla}" for="sigla" />
+                        <p:inputText id="sigla" value="#{ufController.selected.sigla}" title="#{bundle.CreateUfTitle_sigla}" />
+                        <p:outputLabel value="#{bundle.CreateUfLabel_paisid}" for="paisid" />
+                        <p:selectOneMenu id="paisid" value="#{ufController.selected.paisid}" required="true" requiredMessage="#{bundle.EditUfRequiredMessage_paisid}">
+                            <f:selectItems value="#{paisController.itemsAvailableSelectOne}"
+                                           var="paisidItem"
+                                           itemValue="#{paisidItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{ufController.create}" value="#{bundle.Save}" update="display,:UfListForm:datalist,:growl" oncomplete="handleSubmit(args,'UfCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="UfCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
