@@ -32,7 +32,7 @@ O objetivo do sistema é gerenciar todas as áreas de uma determinada loja (vend
 * **Diagrama E.R**  
  ![Diagrama E.R](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/Diagrama%20E.R.png)
 * **Novo diagrama E.R**
- ![Diagrama E.R]()
+ ![Diagrama E.R](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/novo.png)
  * **Diagrama de classe**
  ![Diagrama de classe](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/Diagrama%20de%20classes.png)
   
