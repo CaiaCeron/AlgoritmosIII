@@ -47,9 +47,9 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListUfTitle_paisid}"/>
+                                <h:outputText value="#{bundle.ListUfTitle_paisId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.paisid}"/>
+                            <h:outputText value="#{item.paisId}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{ufController.prepareCreate}" update=":UfCreateForm" oncomplete="PF('UfCreateDialog').show()"/>

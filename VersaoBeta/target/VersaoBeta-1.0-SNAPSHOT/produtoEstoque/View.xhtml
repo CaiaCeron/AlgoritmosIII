@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProdutoEstoqueViewDlg" widgetVar="ProdutoEstoqueViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewProdutoEstoqueTitle}">
+            <h:form id="ProdutoEstoqueViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{produtoEstoqueController.selected != null}">
+                        <h:outputText value="#{bundle.ViewProdutoEstoqueLabel_id}"/>
+                        <h:outputText value="#{produtoEstoqueController.selected.id}" title="#{bundle.ViewProdutoEstoqueTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewProdutoEstoqueLabel_cod}"/>
+                        <h:outputText value="#{produtoEstoqueController.selected.cod}" title="#{bundle.ViewProdutoEstoqueTitle_cod}"/>
+                        <h:outputText value="#{bundle.ViewProdutoEstoqueLabel_nome}"/>
+                        <h:outputText value="#{produtoEstoqueController.selected.nome}" title="#{bundle.ViewProdutoEstoqueTitle_nome}"/>
+                        <h:outputText value="#{bundle.ViewProdutoEstoqueLabel_descricao}"/>
+                        <h:outputText value="#{produtoEstoqueController.selected.descricao}" title="#{bundle.ViewProdutoEstoqueTitle_descricao}"/>
+                        <h:outputText value="#{bundle.ViewProdutoEstoqueLabel_quant}"/>
+                        <h:outputText value="#{produtoEstoqueController.selected.quant}" title="#{bundle.ViewProdutoEstoqueTitle_quant}"/>
+                        <h:outputText value="#{bundle.ViewProdutoEstoqueLabel_valorUnit}"/>
+                        <h:outputText value="#{produtoEstoqueController.selected.valorUnit}" title="#{bundle.ViewProdutoEstoqueTitle_valorUnit}"/>
+                        <h:outputText value="#{bundle.ViewProdutoEstoqueLabel_quantMin}"/>
+                        <h:outputText value="#{produtoEstoqueController.selected.quantMin}" title="#{bundle.ViewProdutoEstoqueTitle_quantMin}"/>
+                        <h:outputText value="#{bundle.ViewProdutoEstoqueLabel_produtoEntradaid}"/>
+                        <h:outputText value="#{produtoEstoqueController.selected.produtoEntradaid}" title="#{bundle.ViewProdutoEstoqueTitle_produtoEntradaid}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ProdutoEstoqueViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

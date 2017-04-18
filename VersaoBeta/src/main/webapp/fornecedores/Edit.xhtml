@@ -22,6 +22,8 @@
                         <p:inputText id="EMail" value="#{fornecedoresController.selected.EMail}" title="#{bundle.EditFornecedoresTitle_EMail}" required="true" requiredMessage="#{bundle.EditFornecedoresRequiredMessage_EMail}"/>
                         <p:outputLabel value="#{bundle.EditFornecedoresLabel_telefone}" for="telefone" />
                         <p:inputText id="telefone" value="#{fornecedoresController.selected.telefone}" title="#{bundle.EditFornecedoresTitle_telefone}" required="true" requiredMessage="#{bundle.EditFornecedoresRequiredMessage_telefone}"/>
+                        <p:outputLabel value="#{bundle.EditFornecedoresLabel_informação}" for="informação" />
+                        <p:inputText id="informação" value="#{fornecedoresController.selected.informação}" title="#{bundle.EditFornecedoresTitle_informação}" required="true" requiredMessage="#{bundle.EditFornecedoresRequiredMessage_informação}"/>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{fornecedoresController.update}" value="#{bundle.Save}" update="display,:FornecedoresListForm:datalist,:growl" oncomplete="handleSubmit(args, 'FornecedoresEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="FornecedoresEditDialog.hide()"/>

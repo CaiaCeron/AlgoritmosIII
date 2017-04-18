@@ -21,25 +21,25 @@
                         <p:outputLabel value="#{bundle.EditFuncionariosLabel_rg}" for="rg" />
                         <p:inputText id="rg" value="#{funcionariosController.selected.rg}" title="#{bundle.EditFuncionariosTitle_rg}" required="true" requiredMessage="#{bundle.EditFuncionariosRequiredMessage_rg}"/>
                         <p:outputLabel value="#{bundle.EditFuncionariosLabel_fone}" for="fone" />
-                        <p:inputText id="fone" value="#{funcionariosController.selected.fone}" title="#{bundle.EditFuncionariosTitle_fone}" />
+                        <p:inputText id="fone" value="#{funcionariosController.selected.fone}" title="#{bundle.EditFuncionariosTitle_fone}" required="true" requiredMessage="#{bundle.EditFuncionariosRequiredMessage_fone}"/>
                         <p:outputLabel value="#{bundle.EditFuncionariosLabel_EMail}" for="EMail" />
                         <p:inputText id="EMail" value="#{funcionariosController.selected.EMail}" title="#{bundle.EditFuncionariosTitle_EMail}" />
                         <p:outputLabel value="#{bundle.EditFuncionariosLabel_sexo}" for="sexo" />
-                        <p:inputText id="sexo" value="#{funcionariosController.selected.sexo}" title="#{bundle.EditFuncionariosTitle_sexo}" />
+                        <p:inputText id="sexo" value="#{funcionariosController.selected.sexo}" title="#{bundle.EditFuncionariosTitle_sexo}" required="true" requiredMessage="#{bundle.EditFuncionariosRequiredMessage_sexo}"/>
                         <p:outputLabel value="#{bundle.EditFuncionariosLabel_cargo}" for="cargo" />
                         <p:inputText id="cargo" value="#{funcionariosController.selected.cargo}" title="#{bundle.EditFuncionariosTitle_cargo}" required="true" requiredMessage="#{bundle.EditFuncionariosRequiredMessage_cargo}"/>
                         <p:outputLabel value="#{bundle.EditFuncionariosLabel_login}" for="login" />
-                        <p:inputText id="login" value="#{funcionariosController.selected.login}" title="#{bundle.EditFuncionariosTitle_login}" />
+                        <p:inputText id="login" value="#{funcionariosController.selected.login}" title="#{bundle.EditFuncionariosTitle_login}" required="true" requiredMessage="#{bundle.EditFuncionariosRequiredMessage_login}"/>
                         <p:outputLabel value="#{bundle.EditFuncionariosLabel_senha}" for="senha" />
-                        <p:inputText id="senha" value="#{funcionariosController.selected.senha}" title="#{bundle.EditFuncionariosTitle_senha}" />
+                        <p:inputText id="senha" value="#{funcionariosController.selected.senha}" title="#{bundle.EditFuncionariosTitle_senha}" required="true" requiredMessage="#{bundle.EditFuncionariosRequiredMessage_senha}"/>
                         <p:outputLabel value="#{bundle.EditFuncionariosLabel_salario}" for="salario" />
                         <p:inputText id="salario" value="#{funcionariosController.selected.salario}" title="#{bundle.EditFuncionariosTitle_salario}" required="true" requiredMessage="#{bundle.EditFuncionariosRequiredMessage_salario}"/>
-                        <p:outputLabel value="#{bundle.EditFuncionariosLabel_endereçoCEP}" for="endereçoCEP" />
-                        <p:selectOneMenu id="endereçoCEP" value="#{funcionariosController.selected.endereçoCEP}" required="true" requiredMessage="#{bundle.EditFuncionariosRequiredMessage_endereçoCEP}">
+                        <p:outputLabel value="#{bundle.EditFuncionariosLabel_enderecoCep}" for="enderecoCep" />
+                        <p:selectOneMenu id="enderecoCep" value="#{funcionariosController.selected.enderecoCep}" >
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
-                            <f:selectItems value="#{endereçoController.itemsAvailableSelectOne}"
-                                           var="endereçoCEPItem"
-                                           itemValue="#{endereçoCEPItem}"/>
+                            <f:selectItems value="#{enderecoController.itemsAvailableSelectOne}"
+                                           var="enderecoCepItem"
+                                           itemValue="#{enderecoCepItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{funcionariosController.update}" value="#{bundle.Save}" update="display,:FuncionariosListForm:datalist,:growl" oncomplete="handleSubmit(args, 'FuncionariosEditDialog');"/>

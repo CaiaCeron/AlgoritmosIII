@@ -17,13 +17,13 @@
                         <p:outputLabel value="#{bundle.EditUfLabel_nome}" for="nome" />
                         <p:inputText id="nome" value="#{ufController.selected.nome}" title="#{bundle.EditUfTitle_nome}" required="true" requiredMessage="#{bundle.EditUfRequiredMessage_nome}"/>
                         <p:outputLabel value="#{bundle.EditUfLabel_sigla}" for="sigla" />
-                        <p:inputText id="sigla" value="#{ufController.selected.sigla}" title="#{bundle.EditUfTitle_sigla}" />
-                        <p:outputLabel value="#{bundle.EditUfLabel_paisid}" for="paisid" />
-                        <p:selectOneMenu id="paisid" value="#{ufController.selected.paisid}" required="true" requiredMessage="#{bundle.EditUfRequiredMessage_paisid}">
+                        <p:inputText id="sigla" value="#{ufController.selected.sigla}" title="#{bundle.EditUfTitle_sigla}" required="true" requiredMessage="#{bundle.EditUfRequiredMessage_sigla}"/>
+                        <p:outputLabel value="#{bundle.EditUfLabel_paisId}" for="paisId" />
+                        <p:selectOneMenu id="paisId" value="#{ufController.selected.paisId}" >
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{paisController.itemsAvailableSelectOne}"
-                                           var="paisidItem"
-                                           itemValue="#{paisidItem}"/>
+                                           var="paisIdItem"
+                                           itemValue="#{paisIdItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{ufController.update}" value="#{bundle.Save}" update="display,:UfListForm:datalist,:growl" oncomplete="handleSubmit(args, 'UfEditDialog');"/>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProdutosaidaViewDlg" widgetVar="ProdutosaidaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewProdutosaidaTitle}">
+            <h:form id="ProdutosaidaViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{produtosaidaController.selected != null}">
+                        <h:outputText value="#{bundle.ViewProdutosaidaLabel_id}"/>
+                        <h:outputText value="#{produtosaidaController.selected.id}" title="#{bundle.ViewProdutosaidaTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewProdutosaidaLabel_quant}"/>
+                        <h:outputText value="#{produtosaidaController.selected.quant}" title="#{bundle.ViewProdutosaidaTitle_quant}"/>
+                        <h:outputText value="#{bundle.ViewProdutosaidaLabel_valorUnit}"/>
+                        <h:outputText value="#{produtosaidaController.selected.valorUnit}" title="#{bundle.ViewProdutosaidaTitle_valorUnit}"/>
+                        <h:outputText value="#{bundle.ViewProdutosaidaLabel_dataSaida}"/>
+                        <h:outputText value="#{produtosaidaController.selected.dataSaida}" title="#{bundle.ViewProdutosaidaTitle_dataSaida}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ProdutosaidaViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

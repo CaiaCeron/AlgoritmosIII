@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProdutoentradaEditDlg" widgetVar="ProdutoentradaEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditProdutoentradaTitle}">
+            <h:form id="ProdutoentradaEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{produtoentradaController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditProdutoentradaLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{produtoentradaController.selected.id}" title="#{bundle.EditProdutoentradaTitle_id}" required="true" requiredMessage="#{bundle.EditProdutoentradaRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditProdutoentradaLabel_quant}" for="quant" />
+                        <p:inputText id="quant" value="#{produtoentradaController.selected.quant}" title="#{bundle.EditProdutoentradaTitle_quant}" required="true" requiredMessage="#{bundle.EditProdutoentradaRequiredMessage_quant}"/>
+                        <p:outputLabel value="#{bundle.EditProdutoentradaLabel_valorUnit}" for="valorUnit" />
+                        <p:inputText id="valorUnit" value="#{produtoentradaController.selected.valorUnit}" title="#{bundle.EditProdutoentradaTitle_valorUnit}" required="true" requiredMessage="#{bundle.EditProdutoentradaRequiredMessage_valorUnit}"/>
+                        <p:outputLabel value="#{bundle.EditProdutoentradaLabel_dataEntrada}" for="dataEntrada" />
+                        <p:calendar id="dataEntrada" pattern="MM/dd/yyyy" value="#{produtoentradaController.selected.dataEntrada}" title="#{bundle.EditProdutoentradaTitle_dataEntrada}" required="true" requiredMessage="#{bundle.EditProdutoentradaRequiredMessage_dataEntrada}" showOn="button"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{produtoentradaController.update}" value="#{bundle.Save}" update="display,:ProdutoentradaListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ProdutoentradaEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ProdutoentradaEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -97,9 +97,9 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListFuncionariosTitle_endereçoCEP}"/>
+                                <h:outputText value="#{bundle.ListFuncionariosTitle_enderecoCep}"/>
                             </f:facet>
-                            <h:outputText value="#{item.endereçoCEP}"/>
+                            <h:outputText value="#{item.enderecoCep}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{funcionariosController.prepareCreate}" update=":FuncionariosCreateForm" oncomplete="PF('FuncionariosCreateDialog').show()"/>

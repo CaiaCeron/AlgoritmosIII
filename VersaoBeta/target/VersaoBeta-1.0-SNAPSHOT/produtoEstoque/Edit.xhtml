@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProdutoEstoqueEditDlg" widgetVar="ProdutoEstoqueEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditProdutoEstoqueTitle}">
+            <h:form id="ProdutoEstoqueEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{produtoEstoqueController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditProdutoEstoqueLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{produtoEstoqueController.selected.id}" title="#{bundle.EditProdutoEstoqueTitle_id}" required="true" requiredMessage="#{bundle.EditProdutoEstoqueRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditProdutoEstoqueLabel_cod}" for="cod" />
+                        <p:inputText id="cod" value="#{produtoEstoqueController.selected.cod}" title="#{bundle.EditProdutoEstoqueTitle_cod}" required="true" requiredMessage="#{bundle.EditProdutoEstoqueRequiredMessage_cod}"/>
+                        <p:outputLabel value="#{bundle.EditProdutoEstoqueLabel_nome}" for="nome" />
+                        <p:inputText id="nome" value="#{produtoEstoqueController.selected.nome}" title="#{bundle.EditProdutoEstoqueTitle_nome}" required="true" requiredMessage="#{bundle.EditProdutoEstoqueRequiredMessage_nome}"/>
+                        <p:outputLabel value="#{bundle.EditProdutoEstoqueLabel_descricao}" for="descricao" />
+                        <p:inputText id="descricao" value="#{produtoEstoqueController.selected.descricao}" title="#{bundle.EditProdutoEstoqueTitle_descricao}" required="true" requiredMessage="#{bundle.EditProdutoEstoqueRequiredMessage_descricao}"/>
+                        <p:outputLabel value="#{bundle.EditProdutoEstoqueLabel_quant}" for="quant" />
+                        <p:inputText id="quant" value="#{produtoEstoqueController.selected.quant}" title="#{bundle.EditProdutoEstoqueTitle_quant}" required="true" requiredMessage="#{bundle.EditProdutoEstoqueRequiredMessage_quant}"/>
+                        <p:outputLabel value="#{bundle.EditProdutoEstoqueLabel_valorUnit}" for="valorUnit" />
+                        <p:inputText id="valorUnit" value="#{produtoEstoqueController.selected.valorUnit}" title="#{bundle.EditProdutoEstoqueTitle_valorUnit}" required="true" requiredMessage="#{bundle.EditProdutoEstoqueRequiredMessage_valorUnit}"/>
+                        <p:outputLabel value="#{bundle.EditProdutoEstoqueLabel_quantMin}" for="quantMin" />
+                        <p:inputText id="quantMin" value="#{produtoEstoqueController.selected.quantMin}" title="#{bundle.EditProdutoEstoqueTitle_quantMin}" required="true" requiredMessage="#{bundle.EditProdutoEstoqueRequiredMessage_quantMin}"/>
+                        <p:outputLabel value="#{bundle.EditProdutoEstoqueLabel_produtoEntradaid}" for="produtoEntradaid" />
+                        <p:selectOneMenu id="produtoEntradaid" value="#{produtoEstoqueController.selected.produtoEntradaid}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{produtoentradaController.itemsAvailableSelectOne}"
+                                           var="produtoEntradaidItem"
+                                           itemValue="#{produtoEntradaidItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{produtoEstoqueController.update}" value="#{bundle.Save}" update="display,:ProdutoEstoqueListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ProdutoEstoqueEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ProdutoEstoqueEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

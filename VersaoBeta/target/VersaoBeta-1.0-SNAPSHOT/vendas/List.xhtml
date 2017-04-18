@@ -53,9 +53,21 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListVendasTitle_funcionarioscpf}"/>
+                                <h:outputText value="#{bundle.ListVendasTitle_funcionariosCpf}"/>
                             </f:facet>
-                            <h:outputText value="#{item.funcionarioscpf}"/>
+                            <h:outputText value="#{item.funcionariosCpf}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListVendasTitle_produtoSaidaid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.produtoSaidaid}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListVendasTitle_clienteId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.clienteId}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{vendasController.prepareCreate}" update=":VendasCreateForm" oncomplete="PF('VendasCreateDialog').show()"/>

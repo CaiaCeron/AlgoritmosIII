@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProdutosaidaEditDlg" widgetVar="ProdutosaidaEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditProdutosaidaTitle}">
+            <h:form id="ProdutosaidaEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{produtosaidaController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditProdutosaidaLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{produtosaidaController.selected.id}" title="#{bundle.EditProdutosaidaTitle_id}" required="true" requiredMessage="#{bundle.EditProdutosaidaRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditProdutosaidaLabel_quant}" for="quant" />
+                        <p:inputText id="quant" value="#{produtosaidaController.selected.quant}" title="#{bundle.EditProdutosaidaTitle_quant}" required="true" requiredMessage="#{bundle.EditProdutosaidaRequiredMessage_quant}"/>
+                        <p:outputLabel value="#{bundle.EditProdutosaidaLabel_valorUnit}" for="valorUnit" />
+                        <p:inputText id="valorUnit" value="#{produtosaidaController.selected.valorUnit}" title="#{bundle.EditProdutosaidaTitle_valorUnit}" required="true" requiredMessage="#{bundle.EditProdutosaidaRequiredMessage_valorUnit}"/>
+                        <p:outputLabel value="#{bundle.EditProdutosaidaLabel_dataSaida}" for="dataSaida" />
+                        <p:calendar id="dataSaida" pattern="MM/dd/yyyy" value="#{produtosaidaController.selected.dataSaida}" title="#{bundle.EditProdutosaidaTitle_dataSaida}" required="true" requiredMessage="#{bundle.EditProdutosaidaRequiredMessage_dataSaida}" showOn="button"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{produtosaidaController.update}" value="#{bundle.Save}" update="display,:ProdutosaidaListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ProdutosaidaEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ProdutosaidaEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

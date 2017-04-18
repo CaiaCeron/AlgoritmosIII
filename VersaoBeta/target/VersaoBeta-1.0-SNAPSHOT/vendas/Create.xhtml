@@ -20,11 +20,23 @@
                         <p:inputText id="valorTotal" value="#{vendasController.selected.valorTotal}" title="#{bundle.CreateVendasTitle_valorTotal}" required="true" requiredMessage="#{bundle.CreateVendasRequiredMessage_valorTotal}"/>
                         <p:outputLabel value="#{bundle.CreateVendasLabel_formaPagamento}" for="formaPagamento" />
                         <p:inputText id="formaPagamento" value="#{vendasController.selected.formaPagamento}" title="#{bundle.CreateVendasTitle_formaPagamento}" required="true" requiredMessage="#{bundle.CreateVendasRequiredMessage_formaPagamento}"/>
-                        <p:outputLabel value="#{bundle.CreateVendasLabel_funcionarioscpf}" for="funcionarioscpf" />
-                        <p:selectOneMenu id="funcionarioscpf" value="#{vendasController.selected.funcionarioscpf}" required="true" requiredMessage="#{bundle.EditVendasRequiredMessage_funcionarioscpf}">
+                        <p:outputLabel value="#{bundle.CreateVendasLabel_funcionariosCpf}" for="funcionariosCpf" />
+                        <p:selectOneMenu id="funcionariosCpf" value="#{vendasController.selected.funcionariosCpf}" >
                             <f:selectItems value="#{funcionariosController.itemsAvailableSelectOne}"
-                                           var="funcionarioscpfItem"
-                                           itemValue="#{funcionarioscpfItem}"/>
+                                           var="funcionariosCpfItem"
+                                           itemValue="#{funcionariosCpfItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateVendasLabel_produtoSaidaid}" for="produtoSaidaid" />
+                        <p:selectOneMenu id="produtoSaidaid" value="#{vendasController.selected.produtoSaidaid}" >
+                            <f:selectItems value="#{produtosaidaController.itemsAvailableSelectOne}"
+                                           var="produtoSaidaidItem"
+                                           itemValue="#{produtoSaidaidItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateVendasLabel_clienteId}" for="clienteId" />
+                        <p:selectOneMenu id="clienteId" value="#{vendasController.selected.clienteId}" >
+                            <f:selectItems value="#{clienteController.itemsAvailableSelectOne}"
+                                           var="clienteIdItem"
+                                           itemValue="#{clienteIdItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{vendasController.create}" value="#{bundle.Save}" update="display,:VendasListForm:datalist,:growl" oncomplete="handleSubmit(args,'VendasCreateDialog');"/>
