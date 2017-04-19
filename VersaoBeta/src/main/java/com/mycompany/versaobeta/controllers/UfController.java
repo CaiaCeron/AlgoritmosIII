@@ -3,7 +3,7 @@ package com.mycompany.versaobeta.controllers;
 import com.mycompany.versaobeta.models.Uf;
 import com.mycompany.versaobeta.controllers.util.JsfUtil;
 import com.mycompany.versaobeta.controllers.util.JsfUtil.PersistAction;
-import com.mycompany.versaobeta.facads.UfFacade;
+import com.mycompany.versaobeta.facade.UfFacade;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,7 +24,7 @@ import javax.faces.convert.FacesConverter;
 public class UfController implements Serializable {
 
     @EJB
-    private com.mycompany.versaobeta.facads.UfFacade ejbFacade;
+    private com.mycompany.versaobeta.facade.UfFacade ejbFacade;
     private List<Uf> items = null;
     private Uf selected;
 

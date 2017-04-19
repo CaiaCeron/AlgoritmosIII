@@ -18,12 +18,12 @@
                         <p:inputText id="cnpj" value="#{fornecedoresController.selected.cnpj}" title="#{bundle.CreateFornecedoresTitle_cnpj}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_cnpj}"/>
                         <p:outputLabel value="#{bundle.CreateFornecedoresLabel_nome}" for="nome" />
                         <p:inputText id="nome" value="#{fornecedoresController.selected.nome}" title="#{bundle.CreateFornecedoresTitle_nome}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_nome}"/>
-                        <p:outputLabel value="#{bundle.CreateFornecedoresLabel_EMail}" for="EMail" />
-                        <p:inputText id="EMail" value="#{fornecedoresController.selected.EMail}" title="#{bundle.CreateFornecedoresTitle_EMail}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_EMail}"/>
+                        <p:outputLabel value="#{bundle.CreateFornecedoresLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{fornecedoresController.selected.email}" title="#{bundle.CreateFornecedoresTitle_email}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_email}"/>
                         <p:outputLabel value="#{bundle.CreateFornecedoresLabel_telefone}" for="telefone" />
                         <p:inputText id="telefone" value="#{fornecedoresController.selected.telefone}" title="#{bundle.CreateFornecedoresTitle_telefone}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_telefone}"/>
-                        <p:outputLabel value="#{bundle.CreateFornecedoresLabel_informação}" for="informação" />
-                        <p:inputText id="informação" value="#{fornecedoresController.selected.informação}" title="#{bundle.CreateFornecedoresTitle_informação}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_informação}"/>
+                        <p:outputLabel value="#{bundle.CreateFornecedoresLabel_informacao}" for="informacao" />
+                        <p:inputText id="informacao" value="#{fornecedoresController.selected.informacao}" title="#{bundle.CreateFornecedoresTitle_informacao}" required="true" requiredMessage="#{bundle.CreateFornecedoresRequiredMessage_informacao}"/>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{fornecedoresController.create}" value="#{bundle.Save}" update="display,:FornecedoresListForm:datalist,:growl" oncomplete="handleSubmit(args,'FornecedoresCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="FornecedoresCreateDialog.hide()"/>

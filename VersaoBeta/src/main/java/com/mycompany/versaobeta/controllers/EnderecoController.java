@@ -3,7 +3,7 @@ package com.mycompany.versaobeta.controllers;
 import com.mycompany.versaobeta.models.Endereco;
 import com.mycompany.versaobeta.controllers.util.JsfUtil;
 import com.mycompany.versaobeta.controllers.util.JsfUtil.PersistAction;
-import com.mycompany.versaobeta.facads.EnderecoFacade;
+import com.mycompany.versaobeta.facade.EnderecoFacade;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,7 +24,7 @@ import javax.faces.convert.FacesConverter;
 public class EnderecoController implements Serializable {
 
     @EJB
-    private com.mycompany.versaobeta.facads.EnderecoFacade ejbFacade;
+    private com.mycompany.versaobeta.facade.EnderecoFacade ejbFacade;
     private List<Endereco> items = null;
     private Endereco selected;
 

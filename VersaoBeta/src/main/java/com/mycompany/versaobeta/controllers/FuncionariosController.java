@@ -3,7 +3,7 @@ package com.mycompany.versaobeta.controllers;
 import com.mycompany.versaobeta.models.Funcionarios;
 import com.mycompany.versaobeta.controllers.util.JsfUtil;
 import com.mycompany.versaobeta.controllers.util.JsfUtil.PersistAction;
-import com.mycompany.versaobeta.facads.FuncionariosFacade;
+import com.mycompany.versaobeta.facade.FuncionariosFacade;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,7 +24,7 @@ import javax.faces.convert.FacesConverter;
 public class FuncionariosController implements Serializable {
 
     @EJB
-    private com.mycompany.versaobeta.facads.FuncionariosFacade ejbFacade;
+    private com.mycompany.versaobeta.facade.FuncionariosFacade ejbFacade;
     private List<Funcionarios> items = null;
     private Funcionarios selected;
 

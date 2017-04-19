@@ -53,9 +53,9 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListClienteTitle_endereçoCEP}"/>
+                                <h:outputText value="#{bundle.ListClienteTitle_enderecoCep}"/>
                             </f:facet>
-                            <h:outputText value="#{item.endereçoCEP}"/>
+                            <h:outputText value="#{item.enderecoCep}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{clienteController.prepareCreate}" update=":ClienteCreateForm" oncomplete="PF('ClienteCreateDialog').show()"/>

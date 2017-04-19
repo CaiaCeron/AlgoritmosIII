@@ -20,12 +20,12 @@
                         <p:inputText id="telefone" value="#{clienteController.selected.telefone}" title="#{bundle.EditClienteTitle_telefone}" />
                         <p:outputLabel value="#{bundle.EditClienteLabel_cpf}" for="cpf" />
                         <p:inputText id="cpf" value="#{clienteController.selected.cpf}" title="#{bundle.EditClienteTitle_cpf}" />
-                        <p:outputLabel value="#{bundle.EditClienteLabel_endereçoCEP}" for="endereçoCEP" />
-                        <p:selectOneMenu id="endereçoCEP" value="#{clienteController.selected.endereçoCEP}" >
+                        <p:outputLabel value="#{bundle.EditClienteLabel_enderecoCep}" for="enderecoCep" />
+                        <p:selectOneMenu id="enderecoCep" value="#{clienteController.selected.enderecoCep}" >
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{enderecoController.itemsAvailableSelectOne}"
-                                           var="endereçoCEPItem"
-                                           itemValue="#{endereçoCEPItem}"/>
+                                           var="enderecoCepItem"
+                                           itemValue="#{enderecoCepItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{clienteController.update}" value="#{bundle.Save}" update="display,:ClienteListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ClienteEditDialog');"/>

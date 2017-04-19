@@ -3,7 +3,7 @@ package com.mycompany.versaobeta.controllers;
 import com.mycompany.versaobeta.models.Fornecedores;
 import com.mycompany.versaobeta.controllers.util.JsfUtil;
 import com.mycompany.versaobeta.controllers.util.JsfUtil.PersistAction;
-import com.mycompany.versaobeta.facads.FornecedoresFacade;
+import com.mycompany.versaobeta.facade.FornecedoresFacade;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,7 +24,7 @@ import javax.faces.convert.FacesConverter;
 public class FornecedoresController implements Serializable {
 
     @EJB
-    private com.mycompany.versaobeta.facads.FornecedoresFacade ejbFacade;
+    private com.mycompany.versaobeta.facade.FornecedoresFacade ejbFacade;
     private List<Fornecedores> items = null;
     private Fornecedores selected;
 

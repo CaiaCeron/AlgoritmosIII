@@ -18,12 +18,12 @@
                         <p:inputText id="cnpj" value="#{fornecedoresController.selected.cnpj}" title="#{bundle.EditFornecedoresTitle_cnpj}" required="true" requiredMessage="#{bundle.EditFornecedoresRequiredMessage_cnpj}"/>
                         <p:outputLabel value="#{bundle.EditFornecedoresLabel_nome}" for="nome" />
                         <p:inputText id="nome" value="#{fornecedoresController.selected.nome}" title="#{bundle.EditFornecedoresTitle_nome}" required="true" requiredMessage="#{bundle.EditFornecedoresRequiredMessage_nome}"/>
-                        <p:outputLabel value="#{bundle.EditFornecedoresLabel_EMail}" for="EMail" />
-                        <p:inputText id="EMail" value="#{fornecedoresController.selected.EMail}" title="#{bundle.EditFornecedoresTitle_EMail}" required="true" requiredMessage="#{bundle.EditFornecedoresRequiredMessage_EMail}"/>
+                        <p:outputLabel value="#{bundle.EditFornecedoresLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{fornecedoresController.selected.email}" title="#{bundle.EditFornecedoresTitle_email}" required="true" requiredMessage="#{bundle.EditFornecedoresRequiredMessage_email}"/>
                         <p:outputLabel value="#{bundle.EditFornecedoresLabel_telefone}" for="telefone" />
                         <p:inputText id="telefone" value="#{fornecedoresController.selected.telefone}" title="#{bundle.EditFornecedoresTitle_telefone}" required="true" requiredMessage="#{bundle.EditFornecedoresRequiredMessage_telefone}"/>
-                        <p:outputLabel value="#{bundle.EditFornecedoresLabel_informação}" for="informação" />
-                        <p:inputText id="informação" value="#{fornecedoresController.selected.informação}" title="#{bundle.EditFornecedoresTitle_informação}" required="true" requiredMessage="#{bundle.EditFornecedoresRequiredMessage_informação}"/>
+                        <p:outputLabel value="#{bundle.EditFornecedoresLabel_informacao}" for="informacao" />
+                        <p:inputText id="informacao" value="#{fornecedoresController.selected.informacao}" title="#{bundle.EditFornecedoresTitle_informacao}" required="true" requiredMessage="#{bundle.EditFornecedoresRequiredMessage_informacao}"/>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{fornecedoresController.update}" value="#{bundle.Save}" update="display,:FornecedoresListForm:datalist,:growl" oncomplete="handleSubmit(args, 'FornecedoresEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="FornecedoresEditDialog.hide()"/>

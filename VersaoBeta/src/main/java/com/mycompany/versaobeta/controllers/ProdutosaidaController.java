@@ -3,7 +3,7 @@ package com.mycompany.versaobeta.controllers;
 import com.mycompany.versaobeta.models.Produtosaida;
 import com.mycompany.versaobeta.controllers.util.JsfUtil;
 import com.mycompany.versaobeta.controllers.util.JsfUtil.PersistAction;
-import com.mycompany.versaobeta.facads.ProdutosaidaFacade;
+import com.mycompany.versaobeta.facade.ProdutosaidaFacade;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,7 +24,7 @@ import javax.faces.convert.FacesConverter;
 public class ProdutosaidaController implements Serializable {
 
     @EJB
-    private com.mycompany.versaobeta.facads.ProdutosaidaFacade ejbFacade;
+    private com.mycompany.versaobeta.facade.ProdutosaidaFacade ejbFacade;
     private List<Produtosaida> items = null;
     private Produtosaida selected;
 

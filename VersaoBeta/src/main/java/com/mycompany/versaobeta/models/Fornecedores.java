@@ -36,9 +36,9 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Fornecedores.findById", query = "SELECT f FROM Fornecedores f WHERE f.id = :id")
     , @NamedQuery(name = "Fornecedores.findByCnpj", query = "SELECT f FROM Fornecedores f WHERE f.cnpj = :cnpj")
     , @NamedQuery(name = "Fornecedores.findByNome", query = "SELECT f FROM Fornecedores f WHERE f.nome = :nome")
-    , @NamedQuery(name = "Fornecedores.findByEMail", query = "SELECT f FROM Fornecedores f WHERE f.eMail = :eMail")
+    , @NamedQuery(name = "Fornecedores.findByEmail", query = "SELECT f FROM Fornecedores f WHERE f.email = :email")
     , @NamedQuery(name = "Fornecedores.findByTelefone", query = "SELECT f FROM Fornecedores f WHERE f.telefone = :telefone")
-    , @NamedQuery(name = "Fornecedores.findByInforma\u00e7\u00e3o", query = "SELECT f FROM Fornecedores f WHERE f.informa\u00e7\u00e3o = :informa\u00e7\u00e3o")})
+    , @NamedQuery(name = "Fornecedores.findByInformacao", query = "SELECT f FROM Fornecedores f WHERE f.informacao = :informacao")})
 public class Fornecedores implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -61,8 +61,8 @@ public class Fornecedores implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
-    @Column(name = "e-mail")
-    private String eMail;
+    @Column(name = "email")
+    private String email;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 15)
@@ -71,8 +71,8 @@ public class Fornecedores implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 200)
-    @Column(name = "informa\u00e7\u00e3o")
-    private String informação;
+    @Column(name = "informacao")
+    private String informacao;
     @JoinTable(name = "fornecedores_produto", joinColumns = {
         @JoinColumn(name = "fornecedores_id", referencedColumnName = "id")}, inverseJoinColumns = {
         @JoinColumn(name = "produto_id", referencedColumnName = "id")})
@@ -88,13 +88,13 @@ public class Fornecedores implements Serializable {
         this.id = id;
     }
 
-    public Fornecedores(Integer id, String cnpj, String nome, String eMail, String telefone, String informação) {
+    public Fornecedores(Integer id, String cnpj, String nome, String email, String telefone, String informacao) {
         this.id = id;
         this.cnpj = cnpj;
         this.nome = nome;
-        this.eMail = eMail;
+        this.email = email;
         this.telefone = telefone;
-        this.informação = informação;
+        this.informacao = informacao;
     }
 
     public Integer getId() {
@@ -121,12 +121,12 @@ public class Fornecedores implements Serializable {
         this.nome = nome;
     }
 
-    public String getEMail() {
-        return eMail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEMail(String eMail) {
-        this.eMail = eMail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getTelefone() {
@@ -137,12 +137,12 @@ public class Fornecedores implements Serializable {
         this.telefone = telefone;
     }
 
-    public String getInformação() {
-        return informação;
+    public String getInformacao() {
+        return informacao;
     }
 
-    public void setInformação(String informação) {
-        this.informação = informação;
+    public void setInformacao(String informacao) {
+        this.informacao = informacao;
     }
 
     @XmlTransient

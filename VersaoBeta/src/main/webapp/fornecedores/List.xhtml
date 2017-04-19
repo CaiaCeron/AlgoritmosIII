@@ -47,9 +47,9 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListFornecedoresTitle_EMail}"/>
+                                <h:outputText value="#{bundle.ListFornecedoresTitle_email}"/>
                             </f:facet>
-                            <h:outputText value="#{item.EMail}"/>
+                            <h:outputText value="#{item.email}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
@@ -59,9 +59,9 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListFornecedoresTitle_informação}"/>
+                                <h:outputText value="#{bundle.ListFornecedoresTitle_informacao}"/>
                             </f:facet>
-                            <h:outputText value="#{item.informação}"/>
+                            <h:outputText value="#{item.informacao}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{fornecedoresController.prepareCreate}" update=":FornecedoresCreateForm" oncomplete="PF('FornecedoresCreateDialog').show()"/>

@@ -56,9 +56,9 @@ public class Cliente implements Serializable {
     @Size(max = 45)
     @Column(name = "cpf")
     private String cpf;
-    @JoinColumn(name = "endere\u00e7o_CEP", referencedColumnName = "cep")
+    @JoinColumn(name = "endereco_cep", referencedColumnName = "cep")
     @ManyToOne
-    private Endereco endereçoCEP;
+    private Endereco enderecoCep;
     @OneToMany(mappedBy = "clienteId")
     private Collection<Vendas> vendasCollection;
 
@@ -106,12 +106,12 @@ public class Cliente implements Serializable {
         this.cpf = cpf;
     }
 
-    public Endereco getEndereçoCEP() {
-        return endereçoCEP;
+    public Endereco getEnderecoCep() {
+        return enderecoCep;
     }
 
-    public void setEndereçoCEP(Endereco endereçoCEP) {
-        this.endereçoCEP = endereçoCEP;
+    public void setEnderecoCep(Endereco enderecoCep) {
+        this.enderecoCep = enderecoCep;
     }
 
     @XmlTransient

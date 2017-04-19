@@ -75,7 +75,7 @@ public class Endereco implements Serializable {
         @JoinColumn(name = "fornecedores_id", referencedColumnName = "id")})
     @ManyToMany
     private Collection<Fornecedores> fornecedoresCollection;
-    @OneToMany(mappedBy = "endere\u00e7oCEP")
+    @OneToMany(mappedBy = "enderecoCep")
     private Collection<Cliente> clienteCollection;
     @JoinColumn(name = "uf_id", referencedColumnName = "id")
     @ManyToOne

@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Funcionarios.findByDataNascimento", query = "SELECT f FROM Funcionarios f WHERE f.dataNascimento = :dataNascimento")
     , @NamedQuery(name = "Funcionarios.findByRg", query = "SELECT f FROM Funcionarios f WHERE f.rg = :rg")
     , @NamedQuery(name = "Funcionarios.findByFone", query = "SELECT f FROM Funcionarios f WHERE f.fone = :fone")
-    , @NamedQuery(name = "Funcionarios.findByEMail", query = "SELECT f FROM Funcionarios f WHERE f.eMail = :eMail")
+    , @NamedQuery(name = "Funcionarios.findByEmail", query = "SELECT f FROM Funcionarios f WHERE f.email = :email")
     , @NamedQuery(name = "Funcionarios.findBySexo", query = "SELECT f FROM Funcionarios f WHERE f.sexo = :sexo")
     , @NamedQuery(name = "Funcionarios.findByCargo", query = "SELECT f FROM Funcionarios f WHERE f.cargo = :cargo")
     , @NamedQuery(name = "Funcionarios.findByLogin", query = "SELECT f FROM Funcionarios f WHERE f.login = :login")
@@ -76,8 +76,8 @@ public class Funcionarios implements Serializable {
     private String fone;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="E-mail inválido")//if the field contains email address consider using this annotation to enforce field validation
     @Size(max = 45)
-    @Column(name = "e-mail")
-    private String eMail;
+    @Column(name = "email")
+    private String email;
     @Basic(optional = false)
     @NotNull
     @Column(name = "sexo")
@@ -168,12 +168,12 @@ public class Funcionarios implements Serializable {
         this.fone = fone;
     }
 
-    public String getEMail() {
-        return eMail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEMail(String eMail) {
-        this.eMail = eMail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Character getSexo() {

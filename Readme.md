@@ -1,4 +1,3 @@
-
 ![logo](http://sisdia.abmes.org.br/images/logo/5000_Logo.jpg)
 # Projeto Algoritmos e Programação III
 Integrantes do projeto: 
@@ -33,13 +32,9 @@ O objetivo do sistema é gerenciar todas as áreas de uma determinada loja (vend
 * **Diagrama E.R**  
  ![Diagrama E.R](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/Diagrama%20E.R.png)
 * **Novo diagrama E.R**
- ![Diagrama E.R](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/novoER.png)
+ ![Diagrama E.R](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/novo.png)
  * **Diagrama de classe**
  ![Diagrama de classe](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/Diagrama%20de%20classes.png)
  * **Novo diagrama de classe**
  ![Diagrama de classe](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/novoClasse.png)
   
-* **Tecnologias**
-- 
--
--
