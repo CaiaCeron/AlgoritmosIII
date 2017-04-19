@@ -30,11 +30,11 @@ O objetivo do sistema é gerenciar todas as áreas de uma determinada loja (vend
 * **Diagrama de caso de uso**
   ![caso  de uso](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/Diagrama%20de%20caso%20de%20uso.png)  
 * **Diagrama E.R**  
- ![Diagrama E.R](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/Diagrama%20E.R.png)
+ ![Diagrama E.R](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/Diagrama%20ER.png)
 * **Novo diagrama E.R**
- ![Diagrama E.R](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/novo.png)
+ ![Diagrama E.R](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/novoER.png)
  * **Diagrama de classe**
- ![Diagrama de classe](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/Diagrama%20de%20classes.png)
+ ![Diagrama de classe](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/Diagrama%20de%20classe.png)
  * **Novo diagrama de classe**
  ![Diagrama de classe](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/novoClasse.png)
   
