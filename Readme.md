@@ -25,7 +25,10 @@ O objetivo do sistema é gerenciar todas as áreas de uma determinada loja (vend
 8. Pesquisar conteúdo do estoque
 9. Emitir nota fiscal com informações da venda
 10. Validação de usuário
-11. Diposnibilizar formas alternativas de pagamento no momento da venda (ex: cartões de crédito)
+11. Diposnibilizar formas alternativas de pagamento no momento da venda (ex: cartões de crédito) 
+ 
+ * **Tecnologias utilizadas:**
+ Java Web, Jsf, Hibernate, PrimeFaces
 
 * **Diagrama de caso de uso**
   ![caso  de uso](https://github.com/AlexandreSchmidt/AlgoritmosIII/blob/master/Diagrama%20de%20caso%20de%20uso.png)  
